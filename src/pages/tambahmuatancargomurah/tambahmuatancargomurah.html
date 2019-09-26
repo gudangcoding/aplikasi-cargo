@@ -1,0 +1,100 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Tambah Muatan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let post of datakirim; let i=index">
+      <ion-item>
+        <ion-label floating>No Resi</ion-label>
+        <ion-input type="text" readonly value="{{ no_resi }}" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Jenis Barang</ion-label>
+        <ion-input type="text" [(ngModel)]="jenis_barang" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Deskripsi</ion-label>
+        <ion-input type="text" [(ngModel)]="deskripsi_barang" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Qty</ion-label>
+        <ion-input type="number" [(ngModel)]="jumlah" (ionChange)='ganti()' required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Panjang</ion-label>
+        <ion-input type="number" [(ngModel)]="panjang" (ionChange)='ganti()'required ></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Lebar</ion-label>
+          <ion-input type="number" [(ngModel)]="lebar" (ionChange)='ganti()' required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>Tinggi</ion-label>
+          <ion-input type="number" [(ngModel)]="tinggi" (ionChange)='ganti()' required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>Berat Volume</ion-label>
+           <ion-input type="number" [(ngModel)]="berat_volume" readonly required></ion-input> 
+          <!--<ion-input type="text" [(ngModel)]="berat_volume"></ion-input>-->
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>Berat Actual</ion-label>
+          <ion-input type="number" [(ngModel)]="berat_aktual" (ionChange)='berataktual()' required></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label floating>Berat Digunakan</ion-label>
+          <ion-input type="number" [(ngModel)]="berat_pakai" readonly required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Harga</ion-label>
+            <ion-input type="number" [(ngModel)]="harga" value="{{ tarif }}" required></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label floating>SubTotal</ion-label>
+            <ion-input type="number" [(ngModel)]="sub_total" readonly required></ion-input>
+          </ion-item>
+    
+     
+            
+          <ion-item>
+            <ion-label>Packaging</ion-label>
+            <ion-select [(ngModel)]="jenis_packaging" (ionChange)="pilihpackaging(jenis_packaging.value)" required>
+              <ion-option value="Wrap Plastic">Wrap Plastic</ion-option>
+              <ion-option value="Vallet Kayu">Vallet Kayu</ion-option>
+            </ion-select> 
+          </ion-item>
+    
+          <ion-item>
+            <ion-label floating>Biaya Packaging</ion-label>
+            <ion-input type="number" [(ngModel)]="biaya_packaging" required></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label floating>Biaya Pickup</ion-label>
+            <ion-input type="number" [(ngModel)]="biaya_pickup" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Grand Total</ion-label>
+            <ion-input type="number" [(ngModel)]="grandtotal" readonly required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <button large ion-button block color="secondary" (click)="simpan_muatan()">Simpan</button>
+          </ion-item>
+  </ion-list>
+</ion-content>

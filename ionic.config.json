@@ -1,5 +1,7 @@
 {
   "name": "cargomurah",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

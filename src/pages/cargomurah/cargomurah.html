@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar no-lines>
+    <ion-title text-center>Cargo Murah</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-6 (click)="inbound()">
+        <img src="assets/images/inboundd.png" width="100" class="center">
+        <p>Inbound</p>
+      </ion-col>
+      <ion-col col-md-6 (click)="outbound()">
+        <img src="assets/images/outboundd.png" width="100" class="center">
+        <p>Outbound</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-md-6 (click)="barcode()">
+        <img src="assets/images/cek barang.png" width="100" class="center">
+        <p>Cek Barang</p>
+      </ion-col>
+      <ion-col col-md-6 (click)="report()">
+        <img src="assets/images/laporan.png" width="100" class="center">
+        <p>Laporan</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-md-6 (click)="cetakBarcode()">
+          <img src="assets/images/print barcode.png" width="100" class="center">
+          <p>Atur Barcode</p>
+        </ion-col>
+        <ion-col col-md-6 (click)="rute()">
+            <img src="assets/images/rute.png" width="100" class="center">
+            <p>Rute</p>
+          </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

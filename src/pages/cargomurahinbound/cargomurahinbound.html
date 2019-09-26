@@ -1,0 +1,52 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cargo Murah Inbound</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+
+  <ion-list>
+    <ion-item *ngFor="let post of posts; let i=index">
+      <ion-row>
+        <h3>No Resi : {{post.no_resi}}</h3>
+        <h4 text-wrap>Nama Customer :{{post.nama_customer}}</h4>
+        <p text-wrap>Alamat Pengambilan : {{post.alamat_pengambilan}}</p>
+      </ion-row>
+      <ion-row>
+          <a href="whatsapp://send?phone=+6208181830651">
+              <button class="button" ion-button outline text-center>
+                <ion-icon class="icon" item-end name="logo-whatsapp" color="secondary"></ion-icon>
+            </button>
+          </a>
+          
+          <button class="button" ion-button outline>
+              <ion-icon class="icon" (click)="rutejemput(post.alamat_pengambilan)" item-end name="ios-navigate" color="merah"></ion-icon>
+          </button>
+          <button class="button" ion-button outline>
+              <ion-icon class="icon" (click)="printBarcode()" color="dark" item-end name="print" color="outline"></ion-icon>
+          </button>
+          <button class="button" ion-button outline>
+              <ion-icon class="icon" (click)="tambahMuatan(post.no_resi,post.tarif)" color="light"  item-end name="add-circle"></ion-icon>
+          </button>
+          <button class="button" ion-button outline>
+              <ion-icon class="icon" (click)="tandaTangan()" color="primary"  item-end name="hand"></ion-icon>
+          </button>
+          
+        
+        
+        
+        
+      </ion-row>
+     
+    </ion-item>
+  </ion-list>
+
+  
+  
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+</ion-content>

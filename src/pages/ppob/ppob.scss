@@ -1,0 +1,23 @@
+page-ppob {
+    ion-col{
+        background:transparent;
+        border-radius: 50%;
+        margin: 10px;
+        font-weight: bold;
+        color: white;
+    }
+
+   
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      .col{
+          margin: 5px;
+      }
+      p{
+          text-align: center;
+      }
+}

@@ -1,1 +1,26 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content" no-lines>
+
+    <ion-header class="header">
+        <img src="assets/bg.jpg">
+    </ion-header>
+
+    <ion-content class="login" >
+        <ion-item style="background: transparent;">
+            <button menuClose ion-item style="background: transparent;" (click)="beranda()" no-lines>
+                <ion-icon name="home" item-left></ion-icon>
+              Beranda
+            </button>
+            <button menuClose ion-item style="background: transparent;" no-lines>
+                <ion-icon name="person" item-left></ion-icon>
+              Edit Profil
+            </button>
+            <button menuClose ion-item (click)="logout()" style="background: transparent;" no-lines>
+                <ion-icon name="power" item-left></ion-icon>
+              Keluar
+            </button>
+        </ion-item>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
